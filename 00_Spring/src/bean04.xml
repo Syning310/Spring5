@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--    级联赋值，也就是外部注入       -->
+    <bean id="emp09" class="bean.Employee">
+        <!-- 设置两个普通属性 -->
+        <property name="name" value="红颜"></property>
+        <property name="gender" value="女"></property>
+
+
+        <!-- 级联赋值  -->
+        <property name="dept" ref="dept"></property>
+        
+    </bean>
+    
+    <bean id="dept" class="bean.Dept">
+        <property name="name" value="命运"></property>
+    </bean>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--    级联赋值，也就是外部注入       -->
+    <bean id="emp99" class="bean.Employee">
+        <!-- 设置两个普通属性 -->
+        <property name="name" value="红颜"></property>
+        <property name="gender" value="女"></property>
+
+
+        <!-- 级联赋值，另一种写法  -->
+        <property name="dept" ref="dept"></property>
+<!--        需要在 Employee 中添加上 Dept 对象的 get 方法 -->
+        <property name="dept.name" value="死亡神宫"></property>
+    </bean>
+
+
+
+
+
+</beans>

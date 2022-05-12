@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+>
+
+    
+<!--    
+        开启组件扫描
+
+-->
+<!--    <context:component-scan base-package="spring5"></context:component-scan>-->
+    
+    
+    
+    
+<!--    
+           use-default-filters="false"  表示现在不适用默认filter，而是自己配置filter
+           context:include-filter 扫描哪些内容
+        示例1
+-->
+<!--    <context:component-scan base-package="spring5" use-default-filters="false">-->
+<!--        <context:include-filter type="annotation"-->
+<!--                                expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+<!--    -->
+    
+<!--    
+        
+-->
+<!--    <context:component-scan base-package="spring5">-->
+<!--        <context:exclude-filter type="annotation"-->
+<!--                                expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+    
+    
+</beans> 

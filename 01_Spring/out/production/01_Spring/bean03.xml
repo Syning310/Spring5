@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       
+       
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+       
+       xmlns:util="http://www.springframework.org/schema/util"
+       
+>
+
+<!--   1、提取List集合类型属性注入      -->
+    <util:list id="bookList">
+        <value>三十三重天</value>
+        <value>命运</value>
+        <value>光明</value>
+    </util:list>
+    
+<!--    2、提取List集合类型属性注入          -->
+    <bean id="book1" class="collectiontype.Book" scope="prototype">
+        <property name="list" ref="bookList"></property>
+    </bean>
+    
+    
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:p="http://www.springframework.org/schema/p" >
+       
+    
+    <!--  配置 Hello 对象创建  -->
+    
+    <bean id="hello" class="shang.yining.Hello"></bean>
+    
+    
+    
+    <!--  set方法注入属性    对象是无参构造创建的  -->
+    <bean id="book" class="shang.yining.Book">
+        <property name="bname" value="九阳神功"></property>
+        <property name="author" value="达摩老祖"></property>
+    </bean>
+    
+    
+    <!--  有参构造注入属性  -->
+    <bean id="order" class="shang.yining.Order">
+        <constructor-arg name="name" value="衡山剑法"></constructor-arg>
+        <constructor-arg name="address" value="衡山"></constructor-arg>
+    </bean>
+
+
+    <!--  利用set方法注入   -->
+    <bean id="book2" class="shang.yining.Book" p:bname="无名" p:author="宁"></bean>
+    
+    <bean id="book3" class="shang.yining.Book">
+        <property name="author"><null/></property>
+        <property name="bname">
+            <value><![CDATA[#<北京北京*>]]></value>
+        </property>
+    </bean>
+    
+    
+    
+    <!--  给 Service 配置 DAO 类的属性 -->
+    
+    <bean id="userDAO1" class="dao.UserDAO"></bean>
+    
+    <bean id="userService01" class="service.UserService">
+        <property name="userDAO" ref="userDAO1"></property>  
+        <!-- name中应该是属性的名称，set方法；ref是参照之前创建的对象，也就是userDAO1对应的id  -->
+    </bean>
+      
+    
+</beans>

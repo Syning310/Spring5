@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="classes" class="collectiontype.Classes">
+        <property name="students">
+            <list>
+                <ref bean="stu9"></ref>
+                <ref bean="stu10"></ref>
+            </list>
+        </property>
+    </bean>
+
+ 
+
+    
+    
+    
+    
+
+    <!--     集合属性注入     -->
+    <bean id="stu9" class="collectiontype.Stu">
+        <!--        1、数组类型属性注入         -->
+        <property name="courses">
+            <array>
+                <value>java</value>
+                <value>MySQL</value>
+            </array>
+        </property>
+
+        <!--        2、List集合类型属性注入       -->
+        <property name="bookList">
+            <list>
+                <value>java核心技术卷Ⅰ</value>
+                <value>java核心技术卷Ⅱ</value>
+            </list>
+        </property>
+
+        <!--        3、Map集合类型属性注入            -->
+        <property name="look">
+            <map>
+                <entry key="眼睛" value="诗和远方"></entry>
+                <entry key="拳头" value="挥动"></entry>
+            </map>
+        </property>
+
+        <!--        4、Set集合类型属性注入                   -->
+        <property name="bodys">
+            <set>
+                <value>腿</value>
+                <value>头</value>
+                <value>拳</value>
+                <value>掌</value>
+                <value>指</value>
+            </set>
+        </property>
+
+    </bean>
+
+
+
+    <!--     集合属性注入     -->
+    <bean id="stu10" class="collectiontype.Stu">
+        <!--        1、数组类型属性注入         -->
+        <property name="courses">
+            <array>
+                <value>C++</value>
+                <value>oracle</value>
+            </array>
+        </property>
+
+        <!--        2、List集合类型属性注入       -->
+        <property name="bookList">
+            <list>
+                <value>活着</value>
+                <value>程序员的自我修养</value>
+            </list>
+        </property>
+
+        <!--        3、Map集合类型属性注入            -->
+        <property name="look">
+            <map>
+                <entry key="眼睛" value="诗和远方"></entry>
+                <entry key="拳头" value="挥动"></entry>
+            </map>
+        </property>
+
+        <!--        4、Set集合类型属性注入                   -->
+        <property name="bodys">
+            <set>
+                <value>腿</value>
+                <value>头</value>
+                <value>拳</value>
+                <value>掌</value>
+                <value>指</value>
+            </set>
+        </property>
+
+    </bean>
+    
+
+
+</beans>
